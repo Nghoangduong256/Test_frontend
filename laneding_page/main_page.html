@@ -13,106 +13,130 @@
       src="https://kit.fontawesome.com/25bba1eec4.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="./css/style.css" />
     <title>Landing Page</title>
   </head>
   <body>
-    <!-- Upper -->
-    <div class="upper">
-      <div class="container">
-        <div class="row">
-          <div class="col-3 align-self-left">
-            <i class="fas fa-phone"></i>+84 865 359 388
-          </div>
-          <div class="col-4 align-self-left">
-            <i class="fas fa-envelope"></i>info@vtiacademy.edu.vn
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <!-- Hamburger nằm trong sidebar -->
+      <button id="sbToggle" class="sb-toggle mt-1" aria-label="Mở/đóng sidebar">
+        <i class="fa-solid fa-bars"></i>
+        <span class="sb-label fw-semibold">Thu gọn / Mở rộng</span>
+      </button>
 
-    <!-- Nav bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-      <aside class="sidebar d-flex flex-column align-items-center gap-2">
-        <button class="border mx-4">
-          <span class="navbar-toggler-icon"></span>
+      <ul class="sb-menu mt-1">
+        <li>
+          <a class="sb-link active" href="#"
+            ><i class="sb-icon fa-solid fa-home"></i
+            ><span class="sb-label">Home</span></a
+          >
+        </li>
+        <li>
+          <a class="sb-link" href="#"
+            ><i class="sb-icon fa-solid fa-user-graduate"></i
+            ><span class="sb-label">Quản lý học sinh</span></a
+          >
+        </li>
+        <li>
+          <a class="sb-link" href="#"
+            ><i class="sb-icon fa-solid fa-calendar-days"></i
+            ><span class="sb-label">Thời khóa biểu</span></a
+          >
+        </li>
+        <li>
+          <a class="sb-link" href="#"
+            ><i class="sb-icon fa-solid fa-gear"></i
+            ><span class="sb-label">Cài đặt</span></a
+          >
+        </li>
+      </ul>
+    </aside>
+
+    <!-- ===== CONTENT ===== -->
+    <header class="topbar">
+      <div class="brand-wrap">
+        <!-- thay bằng hình logo thật của bạn -->
+        <img
+          src="./img/VTI_logo.png"
+          alt="VTI Academy Logo"
+          width="20%"
+          height="20%"
+        />
+        <h1 class="greet">Quản lý học sinh</h1>
+      </div>
+
+      <div class="ms-auto d-flex align-items-center gap-3">
+        <!-- Chuông thông báo -->
+        <button class="icon-btn" title="Thông báo">
+          <i class="fa-regular fa-bell"></i>
         </button>
-        <ul class="nav flex-column align-items-center">
-          <li class="nav-item">
-            <a class="nav-link sb-btn" href="#" title="Cộng đồng">
-              <i class="fa-solid fa-people-group"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link sb-btn" href="#" title="Hạng mục">
-              <i class="fa-solid fa-crown"></i>
-            </a>
-          </li>
-        </ul>
-      </aside>
 
-      <div class="container-fluid">
-        <!-- <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button> -->
-        <!-- <button class="border mx-4">
-          <span class="navbar-toggler-icon"></span>
-        </button> -->
+        <!-- Avatar -->
+        <img class="avatar" src="https://i.pravatar.cc/80?img=12" alt="user" />
+      </div>
 
-        <!-- Logo -->
-        <a class="navbar-brand" href="#" ; style="position: relative">
-          <img
-            src="./img/VTI_logo.png"
-            alt="VTI Academy Logo"
-            width="30%"
-            height="30%"
-          />
-        </a>
+      <!-- Logout/Login -->
+      <button class="icon-btn" title="Logout">
+        <i class="fa-solid fa-right-from-bracket"></i>
+      </button>
+    </header>
 
-        <!-- Button hamberger cho mobile -->
-
-        <!-- thành phần trong navbar -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
-                >Trang chủ</a
+    <main class="page">
+      <div class="card">
+        <div class="card-header">
+          <div class="d-flex justify-content-between align-items-center">
+            <h5 class="card-title">Danh sách học sinh</h5>
+            <div>
+              <button class="btn btn-primary" onclick="fillData()">
+                Bấm để lấy dữ liệu
+              </button>
+              <button
+                class="btn btn-success"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
               >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Giới thiệu</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Lý do lựa chọn</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Khung chuong trinh</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Đội ngũ Mentor</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Cảm nhận của học viên</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Hoạt động lớp học</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Liên hệ</a>
-            </li>
-          </ul>
+                + Thêm dữ liệu
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <table class="table">
+            <thead>
+              <tr class="bg-dark text-light">
+                <th scope="col">STT</th>
+                <th scope="col">Avatar</th>
+                <th scope="col">Họ và tên</th>
+                <th scope="col">Email</th>
+                <th scope="col">SĐT</th>
+                <th scope="col">Ngày sinh</th>
+                <th scope="col">Hành động</th>
+              </tr>
+            </thead>
+            <tbody id="data-table">
+              <tr>
+                <!-- <th scope="row">1</th>
+          <td>10:30</td>
+          <td>Duowng</td>
+          <td>
+            <img
+              src="https://i.pinimg.com/736x/8a/81/08/8a8108bfd8036296de3baaf921969134.jpg"
+              alt="//"
+              width="10%"
+            />
+          </td>
+          <td>Dong Anh</td>
+          <td>25/12/2000</td> -->
+              </tr>
+            </tbody>
+          </table>
+          <hr />
         </div>
       </div>
-    </nav>
+    </main>
 
     <!-- JavaScript Bundle with Popper -->
     <script
@@ -120,5 +144,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/function.js"></script>
   </body>
 </html>
