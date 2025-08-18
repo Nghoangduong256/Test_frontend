@@ -75,7 +75,11 @@
         </button>
 
         <!-- Avatar -->
-        <img class="avatar" src="https://i.pravatar.cc/80?img=12" alt="user" />
+        <img
+          class="avatar"
+          src="https://i.pinimg.com/736x/50/70/77/5070770094960235fa3fff38e4785164.jpg"
+          alt="user"
+        />
       </div>
 
       <!-- Logout/Login -->
@@ -85,6 +89,42 @@
     </header>
 
     <main class="page">
+      <div class="card">
+        <div class="card-header">
+          <h5>Thông tin tìm kiếm</h5>
+        </div>
+        <div class="card-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-6 fw-bold mb-2">Nhập từ khóa</div>
+              <div class="col-4 fw-bold mb-2">Lớp học</div>
+              <div class="col fw-bold mb-2 align-middle">Tìm kiếm</div>
+            </div>
+            <div class="row">
+              <div class="col-6 mb-2">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="searchKeyword"
+                  placeholder="Nhập từ khóa tìm kiếm"
+                />
+              </div>
+              <div class="col-4 mb-2">
+                <select class="form-select" id="classSelect">
+                  <option value="">Chọn lớp học</option>
+                  <option value="1">Java Fullstack</option>
+                  <option value="2">Python</option>
+                  <option value="3">Tester</option>
+                </select>
+              </div>
+              <div class="col mb-2">
+                <button class="btn btn-primary">Tìm kiếm</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
       <div class="card">
         <div class="card-header">
           <div class="d-flex justify-content-between align-items-center">
@@ -110,6 +150,7 @@
                 <th scope="col">STT</th>
                 <th scope="col">Avatar</th>
                 <th scope="col">Họ và tên</th>
+                <th scope="col">Lớp học</th>
                 <th scope="col">Email</th>
                 <th scope="col">SĐT</th>
                 <th scope="col">Ngày sinh</th>
@@ -118,25 +159,367 @@
             </thead>
             <tbody id="data-table">
               <tr>
-                <!-- <th scope="row">1</th>
-          <td>10:30</td>
-          <td>Duowng</td>
-          <td>
-            <img
-              src="https://i.pinimg.com/736x/8a/81/08/8a8108bfd8036296de3baaf921969134.jpg"
-              alt="//"
-              width="10%"
-            />
-          </td>
-          <td>Dong Anh</td>
-          <td>25/12/2000</td> -->
+                <td scope="col">1</td>
+                <td scope="col">
+                  <img
+                    src="https://i.pravatar.cc/80?img=11"
+                    alt=""
+                    width="50"
+                  />
+                </td>
+                <td scope="col">Nguyễn Văn An</td>
+                <td scope="col">Java Web K21</td>
+                <td scope="col">an.nguyen@example.com</td>
+                <td scope="col">0987 123 450</td>
+                <td scope="col">12/03/2001</td>
+                <td scope="col">
+                  <button class="btn btn-danger" onclick="deleteData()">
+                    Delete
+                  </button>
+                  <button class="btn btn-warning" onclick="editData()">
+                    Edit
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td scope="col">2</td>
+                <td scope="col">
+                  <img
+                    src="https://i.pravatar.cc/80?img=12"
+                    alt=""
+                    width="50"
+                  />
+                </td>
+                <td scope="col">Trần Thị Mai</td>
+                <td scope="col">ReactJS K12</td>
+                <td scope="col">mai.tran@example.com</td>
+                <td scope="col">0902 345 671</td>
+                <td scope="col">03/11/2000</td>
+                <td scope="col">
+                  <button class="btn btn-danger" onclick="deleteData()">
+                    Delete
+                  </button>
+                  <button class="btn btn-warning" onclick="editData()">
+                    Edit
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td scope="col">3</td>
+                <td scope="col">
+                  <img
+                    src="https://i.pravatar.cc/80?img=13"
+                    alt=""
+                    width="50"
+                  />
+                </td>
+                <td scope="col">Lê Anh Tuấn</td>
+                <td scope="col">Python Data K08</td>
+                <td scope="col">tuan.le@example.com</td>
+                <td scope="col">0978 556 882</td>
+                <td scope="col">25/07/1999</td>
+                <td scope="col">
+                  <button class="btn btn-danger" onclick="deleteData()">
+                    Delete
+                  </button>
+                  <button class="btn btn-warning" onclick="editData()">
+                    Edit
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td scope="col">4</td>
+                <td scope="col">
+                  <img
+                    src="https://i.pravatar.cc/80?img=14"
+                    alt=""
+                    width="50"
+                  />
+                </td>
+                <td scope="col">Phạm Ngọc Huyền</td>
+                <td scope="col">Tester K05</td>
+                <td scope="col">huyen.pham@example.com</td>
+                <td scope="col">0915 888 223</td>
+                <td scope="col">18/01/2002</td>
+                <td scope="col">
+                  <button class="btn btn-danger" onclick="deleteData()">
+                    Delete
+                  </button>
+                  <button class="btn btn-warning" onclick="editData()">
+                    Edit
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td scope="col">5</td>
+                <td scope="col">
+                  <img
+                    src="https://i.pravatar.cc/80?img=15"
+                    alt=""
+                    width="50"
+                  />
+                </td>
+                <td scope="col">Đỗ Đức Thịnh</td>
+                <td scope="col">NodeJS K10</td>
+                <td scope="col">thinh.do@example.com</td>
+                <td scope="col">0934 111 334</td>
+                <td scope="col">09/05/2001</td>
+                <td scope="col">
+                  <button class="btn btn-danger" onclick="deleteData()">
+                    Delete
+                  </button>
+                  <button class="btn btn-warning" onclick="editData()">
+                    Edit
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td scope="col">6</td>
+                <td scope="col">
+                  <img
+                    src="https://i.pravatar.cc/80?img=16"
+                    alt=""
+                    width="50"
+                  />
+                </td>
+                <td scope="col">Bùi Thu Trang</td>
+                <td scope="col">BA K06</td>
+                <td scope="col">trang.bui@example.com</td>
+                <td scope="col">0966 777 445</td>
+                <td scope="col">29/09/2000</td>
+                <td scope="col">
+                  <button class="btn btn-danger" onclick="deleteData()">
+                    Delete
+                  </button>
+                  <button class="btn btn-warning" onclick="editData()">
+                    Edit
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td scope="col">7</td>
+                <td scope="col">
+                  <img
+                    src="https://i.pravatar.cc/80?img=17"
+                    alt=""
+                    width="50"
+                  />
+                </td>
+                <td scope="col">Phan Gia Huy</td>
+                <td scope="col">SQL K07</td>
+                <td scope="col">huy.phan@example.com</td>
+                <td scope="col">0989 222 116</td>
+                <td scope="col">05/12/2003</td>
+                <td scope="col">
+                  <button class="btn btn-danger" onclick="deleteData()">
+                    Delete
+                  </button>
+                  <button class="btn btn-warning" onclick="editData()">
+                    Edit
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td scope="col">8</td>
+                <td scope="col">
+                  <img
+                    src="https://i.pravatar.cc/80?img=18"
+                    alt=""
+                    width="50"
+                  />
+                </td>
+                <td scope="col">Vũ Khánh Linh</td>
+                <td scope="col">DevOps K04</td>
+                <td scope="col">linh.vu@example.com</td>
+                <td scope="col">0904 555 997</td>
+                <td scope="col">14/04/2002</td>
+                <td scope="col">
+                  <button class="btn btn-danger" onclick="deleteData()">
+                    Delete
+                  </button>
+                  <button class="btn btn-warning" onclick="editData()">
+                    Edit
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td scope="col">9</td>
+                <td scope="col">
+                  <img
+                    src="https://i.pravatar.cc/80?img=19"
+                    alt=""
+                    width="50"
+                  />
+                </td>
+                <td scope="col">Hoàng Nhật Nam</td>
+                <td scope="col">Android K09</td>
+                <td scope="col">nam.hoang@example.com</td>
+                <td scope="col">0971 246 819</td>
+                <td scope="col">21/08/2001</td>
+                <td scope="col">
+                  <button class="btn btn-danger" onclick="deleteData()">
+                    Delete
+                  </button>
+                  <button class="btn btn-warning" onclick="editData()">
+                    Edit
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td scope="col">10</td>
+                <td scope="col">
+                  <img
+                    src="https://i.pravatar.cc/80?img=20"
+                    alt=""
+                    width="50"
+                  />
+                </td>
+                <td scope="col">Trịnh Phương Anh</td>
+                <td scope="col">UI/UX K03</td>
+                <td scope="col">anh.trinh@example.com</td>
+                <td scope="col">0912 468 357</td>
+                <td scope="col">27/02/2000</td>
+                <td scope="col">
+                  <button class="btn btn-danger" onclick="deleteData()">
+                    Delete
+                  </button>
+                  <button class="btn btn-warning" onclick="editData()">
+                    Edit
+                  </button>
+                </td>
               </tr>
             </tbody>
           </table>
-          <hr />
+          <br />
+          <nav aria-label="...">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true"
+                  >Previous</a
+                >
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item" aria-current="page">
+                <a class="page-link" href="">2</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="">3</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </main>
+
+    <!-- Footer -->
+    <footer class="bd-footer py-5 mt-5 bg-light">
+      <div class="container py-5">
+        <div class="row  justify-content-center">
+          <div class="col-3 mb-3 mx-3">
+            <h5>Kết nối với chúng tôi</h5>
+            <iframe
+              src="https://vtiacademy.edu.vn/"
+              height="200"
+              width="300"
+              title="Iframe Example"
+            ></iframe>
+            <div class="my-3">
+              <i class="fab fa-tiktok  fa-2xl m-1" ></i>
+              <i class="fab fa-facebook  fa-2xl m-1" style="color: #0091ff" width="50" height="50"></i>
+              <i class="fab fa-youtube fa-2xl m-1" style="color: #f50000" width="50" height="50"></i>
+              </div>
+          </div>
+          <div class="col-2 mb-3 mx-3 p-0">
+            <h5>Cơ sở Hà Nội</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="fas fa-map-pin"></i>T7, 235 Hoàng Cầu Mới, Đống Đa, Hà
+                Nội
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-map-pin"></i>T9, Toà nhà Handico Tower, Phạm
+                Hùng, Từ Liêm, Hà Nội
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-map-pin"></i>VTI Building, Khu đô thị Mễ Trì
+                Hạ, Từ Liêm, Hà Nội
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-map-pin"></i>T3, Tháp A, Tòa nhà Sông Đà, Nam
+                Từ Liêm, Hà Nội
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-phone"></i>Hotline: 0865.359.388 - 0866.805.563
+              </li>
+            </ul>
+          </div>
+          <div class="col-2 mb-3 mx-3 p-0">
+            <h5>Cơ sở Đà Nẵng</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="fas fa-map-pin"></i>T4, toà nhà Phúc Hưng Việt, số
+                43-45 Nguyễn Văn Linh, Quận Hải Châu, TP Đà Nẵng
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-phone"></i>Hotline: 0968.834.386
+              </li>
+            </ul>
+            <br />
+            <h5>Cơ sở Hồ Chí Minh</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="fas fa-map-pin"></i>T4, 35 Mạc Đĩnh Chi, Q.1, TP.HCM
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-phone"></i>Hotline: 0978.067.066
+              </li>
+          </div>
+          <div class="col-2 mb-3 mx-3 p-0">
+            <h5>Cơ sở Nhật Bản</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="fas fa-map-pin"></i>4th Floor, T&T Building, 8-21
+                Tomihisacho, Shinjuku-ku, Tokyo 162-0067
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-map-pin"></i>4th Floor, Belx Shinjuku Building,
+                23-14 Aizumicho, Shinjuku-ku, Tokyo 160-0005
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-map-pin"></i>Room 608, Sanko Building Semba,
+                1-3-9 Minamihonmachi, Chuo-ku, Osaka-shi, Osaka 541-0054
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-map-pin"></i>Room 651, Business Center Nagoya
+                Sakae, 3-22-24 Nishiki, Naka-ku, Nagoya-shi, Aichi 460-0003
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-map-pin"></i>Room 943, 9th Floor, Daini Okabe
+                Building, 3-27-25 Hakata Ekimae, Hakata-ku, Fukuoka-shi, Fukuoka
+                812-0011
+              </li>
+            </ul>
+            <br />
+            <h5>Cơ sở Hàn Quốc</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="fas fa-map-pin"></i>13 Floor, Goryeo Daeyeongak Tower, 97 Toegye-ro, Jung-gu, Seoul, Korea 04535
+              </li>
+              <br />
+            <h5>Cơ sở Singapore</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="fas fa-map-pin"></i>20A Tanjong Pagar Road
+              </li>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- JavaScript Bundle with Popper -->
     <script
